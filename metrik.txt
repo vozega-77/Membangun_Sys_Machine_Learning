@@ -1,0 +1,92 @@
+--- http://po:5000/metrics ---
+
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 13505.0
+python_gc_objects_collected_total{generation="1"} 13387.0
+python_gc_objects_collected_total{generation="2"} 1016.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 1142.0
+python_gc_collections_total{generation="1"} 103.0
+python_gc_collections_total{generation="2"} 8.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="12",patchlevel="12",version="3.12.12"} 1.0
+# HELP mlflow_request_count_total Total number of requests
+# TYPE mlflow_request_count_total counter
+mlflow_request_count_total{endpoint="/predict"} 61.0
+# HELP mlflow_request_count_created Total number of requests
+# TYPE mlflow_request_count_created gauge
+mlflow_request_count_created{endpoint="/predict"} 1.7631185045790691e+09
+# HELP mlflow_request_latency_seconds Request latency in seconds
+# TYPE mlflow_request_latency_seconds histogram
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.005"} 0.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.01"} 0.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.025"} 0.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.05"} 0.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.075"} 1.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.1"} 21.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.25"} 58.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.5"} 60.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="0.75"} 61.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="1.0"} 61.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="2.5"} 61.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="5.0"} 61.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="7.5"} 61.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="10.0"} 61.0
+mlflow_request_latency_seconds_bucket{endpoint="/predict",le="+Inf"} 61.0
+mlflow_request_latency_seconds_count{endpoint="/predict"} 61.0
+mlflow_request_latency_seconds_sum{endpoint="/predict"} 8.041752576828003
+# HELP mlflow_request_latency_seconds_created Request latency in seconds
+# TYPE mlflow_request_latency_seconds_created gauge
+mlflow_request_latency_seconds_created{endpoint="/predict"} 1.7631185045790691e+09
+# HELP mlflow_model_output Predicted value of the model
+# TYPE mlflow_model_output gauge
+mlflow_model_output 0.7333872318267822
+
+---------
+
+--- http://po:8000/metrics --- 
+
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 582.0
+python_gc_objects_collected_total{generation="1"} 90.0
+python_gc_objects_collected_total{generation="2"} 0.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 48.0
+python_gc_collections_total{generation="1"} 4.0
+python_gc_collections_total{generation="2"} 0.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="12",patchlevel="12",version="3.12.12"} 1.0
+# HELP inference_request_latency_seconds Latency untuk request inference
+# TYPE inference_request_latency_seconds summary
+inference_request_latency_seconds_count 66.0
+inference_request_latency_seconds_sum 154.91856149999995
+# HELP inference_request_latency_seconds_created Latency untuk request inference
+# TYPE inference_request_latency_seconds_created gauge
+inference_request_latency_seconds_created 1.7631184168180277e+09
+# HELP inference_requests_total Jumlah total request inference
+# TYPE inference_requests_total counter
+inference_requests_total 66.0
+# HELP inference_requests_created Jumlah total request inference
+# TYPE inference_requests_created gauge
+inference_requests_created 1.7631184168180277e+09
+# HELP last_prediction_timestamp Waktu prediksi terakhir
+# TYPE last_prediction_timestamp gauge
+last_prediction_timestamp 1.763119222424212e+09
+
+---------
